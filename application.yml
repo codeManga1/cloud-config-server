@@ -1,0 +1,17 @@
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defualtZone: http://localhost:8071/eureka/
+  instance:
+    hostname: localhost
+    
+microservice:
+  provider-details-api:
+    endpoints:
+      add:
+        uri: http://localhost:9200/provider/details/create
+      get-by-practice-number:
+        uri: http://localhost:9200/provider/details/{entityNumber}
+      
